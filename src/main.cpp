@@ -70,7 +70,7 @@ void moveFiles(std::string dir, std::string destination_dir, std::string time) {
 
 int main() {
   std::string time_str = getTime();
-  std::string download_dir = getDownloadsPath();
+  std::string download_dir = getDownloadsPath() + std::string(1, std::filesystem::path::preferred_separator);
 
   if (download_dir.empty()) {
     std::cerr << "Error: Could not find downloads folder!" << std::endl;
